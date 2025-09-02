@@ -1,0 +1,42 @@
+# Core normalization settings
+norm: 'zero2two'
+mean: 259.3117656881453 
+std: 362.1817760568698 
+
+# Sampling configuration
+line_search: False
+fine_tune: False
+skip_timestep: False
+#use_secondtweedie: True
+
+# Data configuration
+data:
+  return_id: True
+
+# Data normalization for datasets  
+Data:
+  mean_hr: 259.3117656881453 
+  std_hr: 362.1817760568698 
+
+# Conditioning method configuration
+conditioning:
+  method: 'ps'
+  params:
+    scale: 0.00005
+    use_secondtweedie: False
+    reddiff: True
+    daps: False
+    diffpir: False
+    BB_line_search: False
+
+# Measurement operator configuration
+measurement:
+  operator:
+    name: 'gaussian_blur'
+    kernel_size: 11
+    intensity: 3.0
+  
+  noise: 
+    name: 'gaussian'
+    sigma: 0.001
+
